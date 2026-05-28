@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>클럽원200 대상 재테크 세미나 신청</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Noto+Sans+KR:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg-shape bg-shape-a" aria-hidden="true"></div>
+    <div class="bg-shape bg-shape-b" aria-hidden="true"></div>
+
+    <header class="hero reveal">
+      <img class="hero-logo" src="로고_3PRO (컬러).png" alt="3PRO 로고" />
+      <p class="eyebrow">Hana Card x Hana Securities x 3PRO</p>
+      <h1>클럽원200 대상 재테크 세미나</h1>
+      <p class="subtitle">클럽원200 고객님만을 위한 특별한 인사이트와 네트워킹의 시간</p>
+    </header>
+
+    <main class="container">
+      <section class="section reveal" aria-labelledby="program-title">
+        <h2 id="program-title">프로그램 안내</h2>
+        <div class="program-grid">
+          <article class="card">
+            <h3>[Private Seminar]</h3>
+            <ul>
+              <li>미니 강연</li>
+              <li>연사와 함께하는 다과 및 자유 Q&amp;A</li>
+              <li>소규모 프라이빗 네트워킹</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>[Grand Seminar]</h3>
+            <ul>
+              <li>메인 강연 및 대담형 토크</li>
+              <li>PB·애널리스트 세션</li>
+              <li>Q&amp;A 및 네트워킹</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section reveal" aria-labelledby="schedule-title">
+        <h2 id="schedule-title">세미나 일정 및 장소</h2>
+        <p class="note">※ 아래 내용은 예시입니다.</p>
+        <div class="schedule-card">
+          <p class="round">1회차 | Private Seminar</p>
+          <dl>
+            <div>
+              <dt>연사</dt>
+              <dd>김정호 교수</dd>
+            </div>
+            <div>
+              <dt>주제</dt>
+              <dd>반도체의 미래와 투자 인사이트</dd>
+            </div>
+            <div>
+              <dt>장소</dt>
+              <dd>하나증권 특화점포</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <section class="section reveal" aria-labelledby="apply-title">
+        <h2 id="apply-title">세미나 신청</h2>
+        <form class="apply-form" id="seminar-form">
+          <label for="name">이름</label>
+          <input id="name" name="name" type="text" placeholder="홍길동" required />
+
+          <label for="phone">전화번호</label>
+          <input
+            id="phone"
+            name="phone"
+            type="tel"
+            placeholder="010-1234-5678"
+            inputmode="numeric"
+            maxlength="13"
+            required
+          />
+
+          <fieldset class="consent-box">
+            <legend>개인정보 수집 및 이용 동의</legend>
+            <p>
+              본인은 세미나 신청을 위해 이름, 전화번호를 수집 및 이용하는 것에 동의합니다.
+              수집된 개인정보는 신청 확인 및 행사 안내 목적으로만 사용됩니다.
+            </p>
+            <label class="consent-check" for="consent">
+              <input id="consent" name="consent" type="checkbox" required />
+              위 내용을 확인했으며, 개인정보 수집 및 이용에 동의합니다.
+            </label>
+          </fieldset>
+
+          <button type="submit">신청하기</button>
+          <p class="helper">입력해주신 정보는 신청 확인 용도로만 사용됩니다.</p>
+        </form>
+      </section>
+    </main>
+
+    <footer class="reveal">
+      <small>© 2026 Hana Card x Hana Securities x 3PRO. All rights reserved.</small>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
