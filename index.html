@@ -516,7 +516,21 @@
         </div>
         <div>
           <label class="label">소속 팀 / 부서<span class="req">*</span></label>
-          <input class="input" name="respondent_team" type="text" placeholder="콘텐츠팀" required>
+          <select class="input" name="respondent_team" required>
+            <option value="" disabled selected>선택해주세요</option>
+            <option value="콘텐츠플랫폼본부">콘텐츠플랫폼본부</option>
+            <option value="뉴미디어본부">뉴미디어본부</option>
+            <option value="콘텐츠솔루션본부">콘텐츠솔루션본부</option>
+            <option value="IM사업본부">IM사업본부</option>
+            <optgroup label="콘텐츠비즈니스본부">
+              <option value="콘텐츠비즈니스본부 · 콘텐츠1팀">콘텐츠1팀</option>
+              <option value="콘텐츠비즈니스본부 · 콘텐츠2팀">콘텐츠2팀</option>
+              <option value="콘텐츠비즈니스본부 · 디자인팀">디자인팀</option>
+              <option value="콘텐츠비즈니스본부 · 콘텐츠3팀">콘텐츠3팀</option>
+              <option value="콘텐츠비즈니스본부 · AE팀">AE팀</option>
+            </optgroup>
+            <option value="경영지원본부">경영지원본부</option>
+          </select>
         </div>
       </div>
 
