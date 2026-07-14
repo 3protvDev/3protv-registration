@@ -30,7 +30,7 @@ function doPost(e) {
         "Gemini_사용여부", "Gemini_계정소유자", "Gemini_결제카드", "Gemini_플랜", "Gemini_금액(원)",
         "Claude_사용여부", "Claude_계정소유자", "Claude_결제카드", "Claude_플랜", "Claude_금액(원)",
         "ChatGPT_사용여부", "ChatGPT_계정소유자", "ChatGPT_결제카드", "ChatGPT_플랜", "ChatGPT_금액(원)",
-        "기타툴_이름", "기타툴_사용여부", "기타툴_계정소유자", "기타툴_결제카드", "기타툴_플랜", "기타툴_금액(원)",
+        "기타AI툴_자유입력",
       ]);
     }
 
@@ -47,7 +47,7 @@ function doPost(e) {
       data.gemini_use   || "", data.gemini_account   || "", data.gemini_card   || "", data.gemini_plan   || "", data.gemini_price   || "",
       data.claude_use   || "", data.claude_account   || "", data.claude_card   || "", data.claude_plan   || "", data.claude_price   || "",
       data.chatgpt_use  || "", data.chatgpt_account  || "", data.chatgpt_card  || "", data.chatgpt_plan  || "", data.chatgpt_price  || "",
-      data.other_name   || "", data.other_use        || "", data.other_account  || "", data.other_card    || "", data.other_plan    || "", data.other_price    || "",
+      data.other_text   || "",
     ]);
 
     return ContentService

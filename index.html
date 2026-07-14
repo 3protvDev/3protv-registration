@@ -496,7 +496,7 @@
   <div class="progress-wrap">
     <div class="progress-label">응답 진행률</div>
     <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
-    <div class="progress-count" id="progressCount">0 / 7</div>
+    <div class="progress-count" id="progressCount">0 / 6</div>
   </div>
 
   <!-- ========== FORM ========== -->
@@ -554,6 +554,21 @@
       </div>
     </section>
 
+    <!-- SECTION 3: 기타 AI 툴 -->
+    <section class="section">
+      <div class="section-head">
+        <div class="section-num">SECTION 03</div>
+        <div class="section-title">기타 AI 툴</div>
+        <div class="section-desc">위 목록 외 사용 중인 툴이 있다면 자유롭게 작성</div>
+      </div>
+      <div class="field">
+        <label class="label">기타 AI 툴 사용 현황 (선택)</label>
+        <textarea class="input" name="other_text" rows="4"
+          placeholder="예) Midjourney - 개인 계정, 개인 카드, Pro 플랜, 월 $30&#10;Notion AI - 법인 계정, 법인 카드, Plus 플랜, 월 $16"
+          style="resize:vertical; line-height:1.6;"></textarea>
+      </div>
+    </section>
+
     <!-- SUBMIT -->
     <div class="submit-row">
       <div class="submit-hint">제출 시 자동으로 관리부 시트에 기록됩니다.</div>
@@ -605,7 +620,7 @@
     "genspark_use", "genspark_account", "genspark_card", "genspark_plan", "genspark_price",
     "cutback_use",  "cutback_account",  "cutback_card",  "cutback_plan",  "cutback_price",
     "vrew_use",     "vrew_account",     "vrew_card",     "vrew_plan",     "vrew_price",
-    "other_name",   "other_use",        "other_account", "other_card",    "other_plan",   "other_price",
+    "other_text",
   ];
 
   // ================================================================
@@ -618,7 +633,7 @@
     { key: "genspark", name: "Genspark", sub: "AI 리서치 · 자료 생성" },
     { key: "cutback",  name: "Cutback",  sub: "숏폼 자동 컷 편집" },
     { key: "vrew",     name: "Vrew",     sub: "영상 자막 · AI 편집" },
-    { key: "other",    name: "기타 AI 툴", sub: "위 목록 외 사용 중인 툴" },
+
   ];
 
   const OPTIONS = {
@@ -636,12 +651,6 @@
     const card = document.createElement("div");
     card.className = "tool-card";
     card.dataset.tool = tool.key;
-    const otherNameField = tool.key === "other" ? `
-          <div class="field">
-            <label class="label">툴 이름<span class="req">*</span></label>
-            <input class="input" name="other_name" type="text" placeholder="사용 중인 AI 툴 이름을 입력해주세요">
-          </div>` : "";
-
     card.innerHTML = `
       <div class="tool-header">
         <div class="tool-check">
@@ -670,7 +679,6 @@
           </div>
 
           <div class="tool-detail" style="display:none;">
-          ${otherNameField}
             <div class="field">
               <label class="label">계정 소유<span class="req">*</span></label>
               <div class="pill-group" data-group="${tool.key}_account">
