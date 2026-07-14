@@ -495,7 +495,7 @@
   <div class="progress-wrap">
     <div class="progress-label">응답 진행률</div>
     <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
-    <div class="progress-count" id="progressCount">0 / 6</div>
+    <div class="progress-count" id="progressCount">0 / 7</div>
   </div>
 
   <!-- ========== FORM ========== -->
@@ -598,24 +598,26 @@
   // 전송할 필드 목록 (key = form name 속성값)
   const FIELD_KEYS = [
     "respondent_name", "respondent_team", "respondent_email",
-    "vrew_use",     "vrew_account",     "vrew_card",     "vrew_plan",     "vrew_price",
-    "cutback_use",  "cutback_account",  "cutback_card",  "cutback_plan",  "cutback_price",
-    "genspark_use", "genspark_account", "genspark_card", "genspark_plan", "genspark_price",
-    "gemini_use",   "gemini_account",   "gemini_card",   "gemini_plan",   "gemini_price",
-    "claude_use",   "claude_account",   "claude_card",   "claude_plan",   "claude_price",
     "chatgpt_use",  "chatgpt_account",  "chatgpt_card",  "chatgpt_plan",  "chatgpt_price",
+    "claude_use",   "claude_account",   "claude_card",   "claude_plan",   "claude_price",
+    "gemini_use",   "gemini_account",   "gemini_card",   "gemini_plan",   "gemini_price",
+    "genspark_use", "genspark_account", "genspark_card", "genspark_plan", "genspark_price",
+    "cutback_use",  "cutback_account",  "cutback_card",  "cutback_plan",  "cutback_price",
+    "vrew_use",     "vrew_account",     "vrew_card",     "vrew_plan",     "vrew_price",
+    "other_name",   "other_use",        "other_account", "other_card",    "other_plan",   "other_price",
   ];
 
   // ================================================================
   //  📦  TOOL DEFINITIONS
   // ================================================================
   const TOOLS = [
-    { key: "vrew",     name: "Vrew",     sub: "영상 자막 · AI 편집" },
-    { key: "cutback",  name: "Cutback",  sub: "숏폼 자동 컷 편집" },
-    { key: "genspark", name: "Genspark", sub: "AI 리서치 · 자료 생성" },
-    { key: "gemini",   name: "Gemini",   sub: "Google AI · Workspace" },
-    { key: "claude",   name: "Claude",   sub: "Anthropic · 문서 · 코드" },
     { key: "chatgpt",  name: "ChatGPT",  sub: "OpenAI · 범용 AI" },
+    { key: "claude",   name: "Claude",   sub: "Anthropic · 문서 · 코드" },
+    { key: "gemini",   name: "Gemini",   sub: "Google AI · Workspace" },
+    { key: "genspark", name: "Genspark", sub: "AI 리서치 · 자료 생성" },
+    { key: "cutback",  name: "Cutback",  sub: "숏폼 자동 컷 편집" },
+    { key: "vrew",     name: "Vrew",     sub: "영상 자막 · AI 편집" },
+    { key: "other",    name: "기타 AI 툴", sub: "위 목록 외 사용 중인 툴" },
   ];
 
   const OPTIONS = {
@@ -633,6 +635,12 @@
     const card = document.createElement("div");
     card.className = "tool-card";
     card.dataset.tool = tool.key;
+    const otherNameField = tool.key === "other" ? `
+          <div class="field">
+            <label class="label">툴 이름<span class="req">*</span></label>
+            <input class="input" name="other_name" type="text" placeholder="사용 중인 AI 툴 이름을 입력해주세요">
+          </div>` : "";
+
     card.innerHTML = `
       <div class="tool-header">
         <div class="tool-check">
@@ -661,6 +669,7 @@
           </div>
 
           <div class="tool-detail" style="display:none;">
+          ${otherNameField}
             <div class="field">
               <label class="label">계정 소유<span class="req">*</span></label>
               <div class="pill-group" data-group="${tool.key}_account">
